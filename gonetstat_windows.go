@@ -16,14 +16,24 @@ import (
 var errSkip = errors.New("skip")
 
 
-func Tcp() ([]Process) {   
+func Tcp() []Process {   
 
     return getNetStatData("tcp")
 }
 
-func Tcp6() ([]Process) {
+func Tcp6() []Process {
 
     return getNetStatData("tcpv6")
+}
+
+func Udp() []Process {
+
+    return getNetStatData("udp")
+}
+
+func Udp6() []Process {
+	
+    return getNetStatData("udp6")
 }
 
 func getNetStatData(proto string) ([]Process){
